@@ -250,7 +250,19 @@ bool isCyclic(int graph[MAX_VERTICES][MAX_VERTICES], int vertices) {
             if (isCyclicUtil(graph, vertices, i, visited, -1)) {
                 return true;
             }
+            
         }
     }
     return false;
 }
+
+
+OUtput:
+Enter number of vertices: 5
+Enter number of edges: 6
+Enter edge 1 (u v weight): 0 1 2
+Enter edge 2 (u v weight): 0 2 3
+Enter edge 3 (u v weight): 1 2 4
+Enter edge 4 (u v weight): 1 3 5
+Enter edge 5 (u v weight): 2 4 6
+Enter edge 6 (u v weight): 3 4 7
