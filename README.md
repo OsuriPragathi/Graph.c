@@ -1,3 +1,22 @@
+Title:Graph and operations
+Project Description:
+This project provides an implementation of a graph using an adjacency matrix in C. It includes various operations such as creating a graph, updating edges, searching for edges, deleting edges, and performing traversal algorithms like BFS and DFS. Additionally, the program can detect cycles in the graph.
+
+Features:
+✅ Graph Representation: Uses an adjacency matrix for storing edges.
+✅ Graph Operations:
+
+Create a graph with user input
+Print the adjacency matrix
+Search for an edge between two vertices
+Update the weight of an edge
+Delete an edge between two vertices
+Delete a vertex and its associated edges
+✅ Graph Traversals:
+Breadth-First Search (BFS)
+Depth-First Search (DFS)
+✅ Cycle Detection: Checks if the graph contains a cycle.
+
 /*
  * Graph Implementation in C with various operations
  * Features: 
