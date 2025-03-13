@@ -17,6 +17,13 @@ Breadth-First Search (BFS)
 Depth-First Search (DFS)
 ✅ Cycle Detection: Checks if the graph contains a cycle.
 
+Installation Instructions
+Follow these steps to install and run the Graph Operations program in C:
+
+1. Prerequisites
+Ensure you have the following installed on your system:
+✅ GCC Compiler (for compiling C programs)
+✅ A Terminal or Command Prompt (for running commands)
 /*
  * Graph Implementation in C with various operations
  * Features: 
