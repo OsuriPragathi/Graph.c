@@ -257,7 +257,7 @@ bool isCyclic(int graph[MAX_VERTICES][MAX_VERTICES], int vertices) {
 }
 
 
-OUtput:
+Output:
 Enter number of vertices: 5
 Enter number of edges: 6
 Enter edge 1 (u v weight): 0 1 2
