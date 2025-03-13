@@ -38,92 +38,46 @@ Ensure you have the following installed on your system:
  * 9. Check if the graph is cyclic
  */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdbool.h>
+Usage Examples
+Once the program is compiled and running, you will see a menu with various options. Below are some example interactions to help you understand how to use the program.
 
-#define MAX_VERTICES 10
+1. Creating a Graph:
+2. input:
+Enter number of vertices: 4  
+Enter number of edges: 4  
+Enter edge 1 (u v weight): 0 1 5  
+Enter edge 2 (u v weight): 1 2 3  
+Enter edge 3 (u v weight): 2 3 7  
+Enter edge 4 (u v weight): 3 0 2  
+Graph Representation:
+Adjacency List:
+Vertex 0 -> [1 (5), 3 (2)]
+Vertex 1 -> [0 (5), 2 (3)]
+Vertex 2 -> [1 (3), 3 (7)]
+Vertex 3 -> [2 (7), 0 (2)]
+Searching for an Edge:
+input:
+Enter two vertices to search for an edge (u, v): 1 2  
+Output:
+Edge exists between 1 and 2 with weight 3
+Updating an Edge:
+input:
+Enter two vertices to update edge (u, v) and weight: 1 2 6  
+output:
+Edge updated between 1 and 2 with new weight 6  
+Deleting an Edge:
+input:
+Enter two vertices to delete edge (u, v): 3 0  
+output:
+Edge deleted between 3 and 0  
+Performing Breadth-First Search (BFS):
+input:
+Enter starting vertex for BFS: 0  
+output:
+BFS starting from vertex 0: 0 1 3 2
+Performing Depth-First Search (DFS):
+input:
+Enter starting vertex for DFS: 0
+output:  
+DFS starting from vertex 0: 0 1 2 3  
 
-// Function prototypes
-void printAdjacencyMatrix(int graph[MAX_VERTICES][MAX_VERTICES], int vertices);
-void searchEdge(int graph[MAX_VERTICES][MAX_VERTICES], int u, int v);
-void updateEdge(int graph[MAX_VERTICES][MAX_VERTICES], int u, int v, int weight);
-void deleteEdge(int graph[MAX_VERTICES][MAX_VERTICES], int u, int v);
-void deleteNode(int graph[MAX_VERTICES][MAX_VERTICES], int* vertices, int vertex);
-void takeInput(int* vertices, int graph[MAX_VERTICES][MAX_VERTICES]);
-void bfs(int graph[MAX_VERTICES][MAX_VERTICES], int vertices, int start);
-void dfs(int graph[MAX_VERTICES][MAX_VERTICES], int vertices, int start, bool visited[MAX_VERTICES]);
-bool isCyclic(int graph[MAX_VERTICES][MAX_VERTICES], int vertices);
-
-int main() {
-    int graph[MAX_VERTICES][MAX_VERTICES] = {0};
-    int vertices = 0, choice, u, v, weight;
-
-    takeInput(&vertices, graph);
-
-    while (1) {
-        printf("\nMenu:\n");
-        printf("1. Print adjacency matrix\n");
-        printf("2. Search for an edge\n");
-        printf("3. Update an edge\n");
-        printf("4. Delete an edge\n");
-        printf("5. Delete a node\n");
-        printf("6. Perform BFS\n");
-        printf("7. Perform DFS\n");
-        printf("8. Check if graph is cyclic\n");
-        printf("9. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &choice);
-
-        switch (choice) {
-            case 1:
-                printAdjacencyMatrix(graph, vertices);
-                break;
-            case 2:
-                printf("Enter two vertices to search for an edge (u, v): ");
-                scanf("%d %d", &u, &v);
-                searchEdge(graph, u, v);
-                break;
-            case 3:
-                printf("Enter two vertices to update edge (u, v) and weight: ");
-                scanf("%d %d %d", &u, &v, &weight);
-                updateEdge(graph, u, v, weight);
-                break;
-            case 4:
-                printf("Enter two vertices to delete edge (u, v): ");
-                scanf("%d %d", &u, &v);
-                deleteEdge(graph, u, v);
-                break;
-            case 5:
-                printf("Enter vertex to delete: ");
-                scanf("%d", &u);
-                deleteNode(graph, &vertices, u);
-                break;
-            case 6:
-                printf("Enter starting vertex for BFS: ");
-                scanf("%d", &u);
-                bfs(graph, vertices, u);
-                break;
-            case 7:
-                printf("Enter starting vertex for DFS: ");
-                scanf("%d", &u);
-                bool visited[MAX_VERTICES] = {false};
-                dfs(graph, vertices, u, visited);
-                printf("\n");
-                break;
-            case 8:
-                printf(isCyclic(graph, vertices) ? "Graph is cyclic.\n" : "Graph is acyclic.\n");
-                break;
-            case 9:
-                printf("Exiting...\n");
-                exit(0);
-            default:
-                printf("Invalid choice! Please try again.\n");
-        }
-    }
-    return 0;
-}
-
-    }
-    return false;
-}
