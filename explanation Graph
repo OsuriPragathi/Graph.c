@@ -1,1 +1,12 @@
-
+Explanation:
+Graph Representation: The program uses an adjacency list representation of a graph.
+Graph Functions:
+createGraph(): Initializes a graph with a specified number of vertices.
+addEdge(): Adds an edge between two vertices.
+printGraph(): Prints the adjacency list representation.
+searchEdge(): Checks if an edge exists.
+updateEdge(): Modifies an existing edge.
+deleteEdge(): Removes an edge from the graph.
+Traversals:
+BFS(): Implements Breadth-First Search.
+DFS(): Implements Depth-First Search.
